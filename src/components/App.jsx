@@ -3,6 +3,7 @@ import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Statistics from "./Statistics/Statistics";
 import Section from "./Section/Section";
 import Notification from "./Notification/Notification";
+import Spinner from "./Spinner/Spinner";
 
 class App extends Component {
   state = {
@@ -12,7 +13,7 @@ class App extends Component {
   };
 
   handleFeedback = (type) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ...prevState,
       [type]: prevState[type] + 1,
     }));
@@ -38,6 +39,8 @@ class App extends Component {
 
     return (
       <div>
+        <Spinner></Spinner>
+        
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={feedbackOptions}
