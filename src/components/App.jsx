@@ -34,7 +34,7 @@ class App extends Component {
   };
 
   render() {
-    const feedbackOptions = ["good", "neutral", "bad"];
+    const feedbackOptions = Object.keys(this.state);
     const totalFeedback = this.countTotalFeedback();
 
     return (
